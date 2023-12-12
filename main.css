@@ -1,0 +1,382 @@
+
+*,
+*:before,
+*:after {
+    box-sizing: revert;
+}
+
+
+/* Gösteri kartlarını düzenlemek için */
+.show-card {
+    background: #f8f8f8; /* Açık arka plan rengi */
+    border: 1px solid #ddd; /* Kenarlık */
+    border-radius: 4px; /* Hafif yuvarlak köşeler */
+    margin-bottom: 2rem; /* Alt boşluk */
+    overflow: hidden; /* İçerik dışına taşmaması için */
+    transition: transform 0.3s ease; /* Hover efekti için geçiş */
+}
+
+.show-card:hover {
+    transform: translateY(-5px); /* Hover durumunda hafif yukarı kaydırma efekti */
+}
+
+/* Gösteri kartlarının içindeki resimler için */
+.show-card img {
+    width: 200%;
+    height: 600px;
+    display: flex;
+}
+
+/* Gösteri başlığı ve yıl bilgisi için stil */
+.show-card .show-info {
+    padding: 0.5rem;
+    text-align: center; /* Metni ortala */
+}
+
+/* Gösteri kartları için responsive grid düzeni */
+.shows-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Kartları esnek ve yan yana düzenler */
+    gap: 1rem; /* Kartlar arası boşluk */
+    padding: 1rem;
+}
+
+/* Medya sorguları ile responsive davranış */
+@media (max-width: 768px) {
+    /* Küçük ekranlar için tek sütunlu düzen */
+    .shows-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+body {
+    padding: 0;
+    margin: 10px;
+    margin-top: 90px;
+    /*margin-top: 60px;*/
+    font-family: 'Roboto', sans-serif; /* Modern ve temiz bir yazı tipi */
+    background: rgb(255, 255, 255); /* Daha açık bir arka plan rengi */
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+}
+
+a, a:visited {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+
+
+.container {
+    margin: 0 auto;
+    max-width: 900px;
+
+
+}
+
+.container, .modal-overlay-content, .btn {
+    box-shadow: 0 10px 18px rgb(8, 72, 80); /* Hafif gölge efekti */
+}
+
+
+/* Home */
+
+.home img {
+    width: 100%;
+    max-width: 400px; /* Fotoğraflar için maksimum genişlik */
+    height: auto;
+    display: inline-table;
+}
+
+.home {
+    text-align: center; /* Metni ortala */
+}
+
+.home .destinations {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Navigation
+
+
+/* Existing styles */
+/* ... */
+
+
+#nav {
+    background: linear-gradient(to right, #246dbe, #3ed8e7); /* Smooth gradient from dark to lighter blue */
+    color: #e5a7cf;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10; /* Ensure nav is above other content */
+    align-items: center;
+
+    box-shadow: 0 10px 18px rgba(229, 131, 131, 0.26);
+    /* Subtle shadow for depth */
+
+    transition: background-color 0.3s, box-shadow 0.5s; /* Smooth transitions for interactive effects */
+}
+
+#nav a {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 5px;
+    color: #224548;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#nav a:hover,
+#nav a.router-link-active {
+    opacity: 1;
+    transform: scale(1.05); /* Slightly increase size on hover for emphasis */
+}
+
+/* Logo specific styling for bold and standout look */
+#logo {
+    font-weight: bold;
+    font-size: 1.8rem; /* Increased font size */
+    color: #ffffff; /* Ensures logo is always fully opaque and white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow for depth */
+}
+
+
+
+/* Making the links look like buttons */
+#nav a:not(#logo) {
+    background: rgb(255, 255, 255); /* Slight white tint background */
+    padding: 0.5rem 1rem; /* Padding for a button-like appearance */
+    border-radius: 20px; /* Rounded corners for the button-like links */
+    transition: background-color 0.5s ease;
+}
+
+#nav a:not(#logo):hover {
+    background: rgba(255, 255, 255, 0.2); /* Slightly darker tint on hover */
+}
+
+/* Destination Details */
+.destination-details {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.destination-details img {
+    border-radius: 4px;
+    border: 3px solid white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.destination h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Additional styling for the description paragraph if needed */
+.destination p {
+    text-align: justify;
+    max-width: 800px;
+}
+/* Experiences Section */
+.experiences {
+    padding-top: 30px;
+    padding-bottom: 60px;
+    margin-top: 30px;
+    border-top: 1px solid #eaeaea;
+    background-color: #fff; /* Light background for the section */
+}
+
+/* Card Styles */
+.experiences .card {
+    border-radius: 6px; /* Rounded corners for the cards */
+    overflow: hidden; /* Hide overflow */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    background-color: #fdfdfd; /* Slightly off-white background for cards */
+}
+
+.experiences .card:hover {
+    transform: translateY(-7px); /* Slight upward lift */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+}
+
+/* Image Styles */
+.experiences img {
+    width: 100%; /* Full width of the card */
+    height: 350px; /* Fixed height for uniformity */
+    object-fit: cover; /* Cover the area without distortion */
+}
+
+/* Card Text */
+.experiences .card .card__text {
+    background: #34495e; /* Darker background for text */
+    color: #ecf0f1; /* Light text color for contrast */
+    padding: 15px; /* More padding for better spacing */
+    font-size: 1rem; /* Larger font size for readability */
+    font-weight: 500; /* Medium font weight */
+}
+
+/* Card Grid */
+.experiences .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 1.5rem; /* Space between cards */
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    /* Responsive adjustments */
+    .experiences .cards {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    }
+}
+
+/* Ensure the rest of your styles do not conflict with these changes */
+
+/*Modal Overlay*/
+.modal-overlay:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+}
+
+.modal-overlay-content {
+    border-radius: 3px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    min-width: 300px;
+    max-width: 800px;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    padding: 10px;
+    font-size: 1.4rem;
+}
+
+.go-back {
+    display: inline-block;
+    margin-bottom: 15px;
+    background-color: #087990; /* Deep teal color for the background */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding for top/bottom and left/right */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Cursor changes to a pointer on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold font weight */
+    text-shadow: 1px 1px 2px black; /* Adding a subtle shadow to the text */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adding a box shadow for depth */
+    text-transform: uppercase; /* Transforming text to uppercase for emphasis */
+}
+
+
+
+/* Form */
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.input {
+    border: 1px solid lightskyblue;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.btn {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    border: lightcyan;
+    margin-bottom: 130px;
+}
+
+.btn, .input, .card, .modal-overlay-content {
+    border-radius: 8px; /* Yuvarlak köşeler */
+}
+
+.home .destinations, .experiences .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive ızgara sistemi */
+    gap: 20px;
+}
+
+.btn, #nav a {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover, #nav a:hover {
+    background-color: #3949ab; /* Düğme ve bağlantılarda hover efekti */
+    color: #fff;
+}
+
+
+
+/* Footer Styling */
+.footer {
+    font-family: 'Roboto', sans-serif;
+    color: #093336;
+    padding: 0.20rem 1px;
+    display: initial;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    text-align: center; /* Centers the text horizontally */
+    text-shadow: #087990 ;
+    font-size: large;
+}
+
+/* Additional styles if needed */
+.footer a {
+    color: #85e0d8; /* Sets the color of links */
+    text-decoration: none; /* Removes underline from links */
+    opacity: 0.7; /* Slightly transparent links */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer a:hover {
+    opacity: 1; /* Full opacity on hover */
+}
+
+
